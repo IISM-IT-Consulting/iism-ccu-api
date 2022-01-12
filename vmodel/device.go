@@ -668,6 +668,7 @@ func (ps *paramset) ReadAttributes() veap.AttrValues {
 	// convert
 	attrs := make(veap.AttrValues)
 	for n, d := range ps.descr() {
+		fmt.Println(d)
 		attrs[n] = map[string]interface{}{
 			"type":       d.Type,
 			"operations": d.Operations,

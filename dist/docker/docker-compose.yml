@@ -2,7 +2,7 @@ version: "3"
 # 
 services:
   iism-ccu-api:
-    image: thetagamma/iism-ccu-api:latest
+    image: iism-ccu-api:2.0.63_nightly
     # to use a local image use instead
     # image: iism-ccu-api:latest
     container_name: iism-ccu-api

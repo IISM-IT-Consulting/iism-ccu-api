@@ -225,7 +225,7 @@ func runBase() error {
 
 	// file handler for static files
 	http.Handle("/ui/", http.StripPrefix("/ui", http.FileServer(http.Dir(cfg.HTTP.WebUIDir))))
-
+	log.Info("runBase")
 	// setup and start http(s) server
 	httpServer = &httputil.Server{
 		Addr:     ":" + strconv.Itoa(cfg.HTTP.Port),

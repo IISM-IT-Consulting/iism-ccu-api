@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/mdzio/ccu-jack/virtdev"
+	"github.com/IISM-IT-Consulting/iism-ccu-api/virtdev"
 	"github.com/mdzio/go-hmccu/itf"
 	"github.com/mdzio/go-hmccu/itf/vdevices"
 	"github.com/mdzio/go-hmccu/script"
@@ -40,7 +40,7 @@ func (d *VirtualDeviceCol) GetTitle() string {
 
 // GetDescription implements model.Object.
 func (d *VirtualDeviceCol) GetDescription() string {
-	return "Virtual devices of the CCU-Jack"
+	return "Virtual devices of the IISM-CCU-Api"
 }
 
 // GetCollection implements model.Item.

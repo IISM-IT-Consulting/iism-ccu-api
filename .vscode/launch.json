@@ -14,7 +14,7 @@
             "args": []
         },
         {
-            "name": "CCU-Jack",
+            "name": "IISM-CCU-Api",
             "type": "go",
             "request": "launch",
             "mode": "auto",

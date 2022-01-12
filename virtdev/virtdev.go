@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/mdzio/ccu-jack/mqtt"
-	"github.com/mdzio/ccu-jack/rtcfg"
+	"github.com/IISM-IT-Consulting/iism-ccu-api/mqtt"
+	"github.com/IISM-IT-Consulting/iism-ccu-api/rtcfg"
 	"github.com/mdzio/go-hmccu/itf"
 	"github.com/mdzio/go-hmccu/itf/vdevices"
 	"github.com/mdzio/go-hmccu/itf/xmlrpc"
@@ -21,8 +21,8 @@ const (
 	// interface processes (e.g. BidCos-RF).
 	xmlrpcPath = "/RPC3"
 
-	// Interface ID of the CCU-Jack
-	InterfaceID = "CCU-Jack"
+	// Interface ID of the IISM-CCU-Api
+	InterfaceID = "IISM-CCU-Api"
 )
 
 var log = logging.Get("virt-dev")
@@ -61,7 +61,7 @@ func (vd *VirtualDevices) Start() {
 		InterfaceID,
 	)
 	if err != nil {
-		log.Errorf("Adding CCU-Jack device layer to CCU interface list failed: %v", err)
+		log.Errorf("Adding IISM-CCU-Api device layer to CCU interface list failed: %v", err)
 	}
 
 	// virtual device container

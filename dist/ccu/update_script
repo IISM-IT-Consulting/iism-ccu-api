@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Add-on information
-ADDON_ID=ccu-jack
-ADDON_NAME="CCU-Jack"
-ADDON_DESCR_EN="CCU-Jack provides simple and secure REST-based access to CCU data points."
-ADDON_DESCR_DE="CCU-Jack bietet einen einfachen und sicheren REST-basierten Zugriff auf die Datenpunkte der CCU."
+ADDON_ID=iism-ccu-api
+ADDON_NAME="IISM-CCU-Api"
+ADDON_DESCR_EN="IISM-CCU-Api provides simple and secure REST-based access to CCU data points."
+ADDON_DESCR_DE="IISM-CCU-Api bietet einen einfachen und sicheren REST-basierten Zugriff auf die Datenpunkte der CCU."
 
 # Directories
 ADDON_DIR=/usr/local/addons/${ADDON_ID}
@@ -27,7 +27,7 @@ elif [ "$1" == "HM-RASPBERRYMATIC" -o "$1" == "CCU3" ]; then
   mount /usr/local 2> /dev/null
 fi
 
-# Stop ccu-jack, if already installed.
+# Stop iism-ccu-api, if already installed.
 if [ -f $RCD_DIR/${ADDON_ID} ]; then
   echo "Previous installation detected"
   $RCD_DIR/${ADDON_ID} stop
@@ -54,9 +54,9 @@ cp -af www/* ${WWW_DIR}/
 cp -af etc/* ${ETC_DIR}/
 
 # Create configuration file, if it does not already exist.
-if [[ ! -e ${ADDON_DIR}/ccu-jack.cfg ]]; then
+if [[ ! -e ${ADDON_DIR}/iism-ccu-api.cfg ]]; then
   echo "Creating configuration file"
-  cp ${ADDON_DIR}/ccu-jack-default.cfg ${ADDON_DIR}/ccu-jack.cfg
+  cp ${ADDON_DIR}/iism-ccu-api-default.cfg ${ADDON_DIR}/iism-ccu-api.cfg
 fi
 
 # Add menu entry

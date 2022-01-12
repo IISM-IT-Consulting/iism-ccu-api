@@ -9,7 +9,7 @@ import (
 	"github.com/mdzio/go-logging"
 	"github.com/mdzio/go-veap"
 
-	"github.com/mdzio/ccu-jack/rtcfg"
+	"github.com/IISM-IT-Consulting/iism-ccu-api/rtcfg"
 	"github.com/mdzio/go-lib/any"
 	"github.com/mdzio/go-veap/model"
 )
@@ -25,7 +25,7 @@ func NewConfig(col model.ChangeableCollection, store *rtcfg.Store) *Config {
 	c := new(Config)
 	c.Identifier = "config"
 	c.Title = "Configuration"
-	c.Description = "Configuration of the CCU-Jack"
+	c.Description = "Configuration of the IISM-CCU-Api"
 	c.Collection = col
 	c.ReadPVFunc = func() (veap.PV, veap.Error) {
 		store.RLock()

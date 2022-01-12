@@ -1,6 +1,6 @@
 # Android App _HTTP Shortcuts_
 
-CCU-Jack ermöglicht der kostenlosen Android App _HTTP Shortcuts_ einfachen Zugriff auf die Datenpunkte der CCU. Im Folgenden werden zwei Beispiele gezeigt.
+IISM-CCU-Api ermöglicht der kostenlosen Android App _HTTP Shortcuts_ einfachen Zugriff auf die Datenpunkte der CCU. Im Folgenden werden zwei Beispiele gezeigt.
 
 ![Übersicht](httpshortcuts_overview.png)
 

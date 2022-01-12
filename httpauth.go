@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/mdzio/ccu-jack/rtcfg"
+	"github.com/IISM-IT-Consulting/iism-ccu-api/rtcfg"
 
 	"github.com/mdzio/go-logging"
 )

@@ -12,9 +12,9 @@ In der `docker-compose.yml` können Netzwerk-Ports, die in der eigenen Umgebung 
 
 ## Eigenes Docker Image bauen und nutzen
 
-Um einen eigenes CCU-Jack-Container-Image zu bauen gibt es zwei verschiedene Möglichkeiten
+Um einen eigenes IISM-CCU-Api-Container-Image zu bauen gibt es zwei verschiedene Möglichkeiten
 
-### Variante 1: Image aus stabilen "Release" von mdzio/ccu-jack bauen
+### Variante 1: Image aus stabilen "Release" von IISM-IT-Consulting/iism-ccu-api bauen
 
 das ist die empfohlene Variante, wenn man auf der sicheren Seite sein möchte.
 
@@ -25,7 +25,7 @@ das ist die empfohlene Variante, wenn man auf der sicheren Seite sein möchte.
    sh build-release.sh
    ```
 
-### Variante 2: Image aus dem aktuellen Code im Repo von mdzio/ccu-jack bauen
+### Variante 2: Image aus dem aktuellen Code im Repo von IISM-IT-Consulting/iism-ccu-api bauen
 
 das ist die Variante, wenn man neueste Änderungen aus dem Repo benötigt
 
@@ -42,13 +42,13 @@ das ist die Variante, wenn man neueste Änderungen aus dem Repo benötigt
 - Starten direkt über Docker:
 
    ```bash
-   docker run -d -v "$PWD"/conf:/app/conf --name ccu-jack ccu-jack:latest
+   docker run -d -v "$PWD"/conf:/app/conf --name iism-ccu-api iism-ccu-api:latest
    ```
 
 - Alternativ: im `docker-compose.yml` die `image` Zeile ersetzen durch
 
   ```yaml
-  image: ccu-jack:latest
+  image: iism-ccu-api:latest
   ```
 
    und starten mit

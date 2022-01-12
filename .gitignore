@@ -1,10 +1,10 @@
 **/*.key
 **/*.pem
 build/tmp
-ccu-jack-*.tar.gz
-ccu-jack-*.zip
+iism-ccu-api-*.tar.gz
+iism-ccu-api-*.zip
 __debug_bin
 wd/*.cfg
-wd/ccu-jack.exe
-wd/ccu-jack.log
-ccu-jack.code-workspace
+wd/iism-ccu-api.exe
+wd/iism-ccu-api.log
+iism-ccu-api.code-workspace

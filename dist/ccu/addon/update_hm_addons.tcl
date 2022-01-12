@@ -1,5 +1,5 @@
 #!/usr/bin/env tclsh
-# Copyright 2018-2019 MDZ info@ccu-historian.de
+# Copyright 2018-2019 MDZ kontakt@iism.de
 # 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

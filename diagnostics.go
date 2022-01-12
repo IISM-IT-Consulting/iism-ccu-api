@@ -28,7 +28,7 @@ func NewDiagnostics(col model.ChangeableCollection) *model.ROVariable {
 	return model.NewROVariable(&model.ROVariableCfg{
 		Identifier:  "diagnostics",
 		Title:       "Diagnostics",
-		Description: "Diagnostic information about CCU-Jack components and connections",
+		Description: "Diagnostic information about IISM-CCU-Api components and connections",
 		Collection:  col,
 		ReadPVFunc: func() (veap.PV, veap.Error) {
 			v := Diagnostics{

@@ -1,14 +1,14 @@
-# Virtuelle Geräte im CCU-Jack
+# Virtuelle Geräte im IISM-CCU-Api
 
 Im Folgenden sind die unterstützten virtuellen Geräte beschrieben. Spezifische Einstellungen der Geräte können in der CCU vorgenommen werden (_Einstellungen_ → _Geräte_ → Gerät auswählen → _Einstellen_).
 
 _Hinweis:_
 
-_Durch einen Fehler in der Web-UI der CCU können zwar die Zeichen `'` und `"` (einfaches und doppeltes Hochkomma) in Werten von Text-Parametern (z.B. SHORT_PAYLOAD) angegeben werden, beim Anzeigen dieser Zeichen werden sie aber fälschlicherweise als HTML-Entitäten (`&#39;` und `&#34;`) kodiert. Bei einem erneuten Setzen werden die HTML-Entitäten durch den CCU-Jack automatisch zurückgewandelt. Zudem dürfen in Text-Parametern zurzeit nur ASCII-Zeichen verwendet werden. Beispielsweise sind die Zeichen `üöäÜÖÄß` nicht zulässig._
+_Durch einen Fehler in der Web-UI der CCU können zwar die Zeichen `'` und `"` (einfaches und doppeltes Hochkomma) in Werten von Text-Parametern (z.B. SHORT_PAYLOAD) angegeben werden, beim Anzeigen dieser Zeichen werden sie aber fälschlicherweise als HTML-Entitäten (`&#39;` und `&#34;`) kodiert. Bei einem erneuten Setzen werden die HTML-Entitäten durch den IISM-CCU-Api automatisch zurückgewandelt. Zudem dürfen in Text-Parametern zurzeit nur ASCII-Zeichen verwendet werden. Beispielsweise sind die Zeichen `üöäÜÖÄß` nicht zulässig._
 
 ## Statische Geräte (Keine Logik)
 
-Statische Geräte besitzen keine interne Logik und keine Einstellmöglichkeiten. Sie dienen dazu, zusätzliche Datenpunkte zu erschaffen, die über die MQTT- und REST-API des CCU-Jacks angesprochen werden können. Gleichzeitig können sie nahtlos in CCU-Programmen verwendet werden.
+Statische Geräte besitzen keine interne Logik und keine Einstellmöglichkeiten. Sie dienen dazu, zusätzliche Datenpunkte zu erschaffen, die über die MQTT- und REST-API des IISM-CCU-Apis angesprochen werden können. Gleichzeitig können sie nahtlos in CCU-Programmen verwendet werden.
 
 Kanaltyp            | Ab Version | Funktion
 --------------------|------------|-----------------------------------------------------
@@ -31,7 +31,7 @@ Durch die weite Verbreitung des MQTT-Protokolls können eine Vielzahl an Geräte
   * [ESPEasy-Firmware](https://github.com/letscontrolit/ESPEasy)
   * [ESPHome-Firmware](https://esphome.io)
 
-In der MQTT-Konfiguration der Geräte muss die CCU als MQTT-Server (bzw. Broker) eingetragen werden. Der MQTT-Port 1883 bzw. 8883 muss in der CCU-Firewall freigegeben sein. Die MQTT-Payload wird als Text in UTF-8-Kodierung behandelt. Auf der Diagnose-Seite des CCU-Jacks werden eventuelle Konfigurationsfehler angezeigt.
+In der MQTT-Konfiguration der Geräte muss die CCU als MQTT-Server (bzw. Broker) eingetragen werden. Der MQTT-Port 1883 bzw. 8883 muss in der CCU-Firewall freigegeben sein. Die MQTT-Payload wird als Text in UTF-8-Kodierung behandelt. Auf der Diagnose-Seite des IISM-CCU-Apis werden eventuelle Konfigurationsfehler angezeigt.
 
 Kanaltyp                         | Ab Version | Funktion
 ---------------------------------|------------|-----------------------------------------------------

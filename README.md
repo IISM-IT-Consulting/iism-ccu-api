@@ -1,26 +1,26 @@
-# CCU-Jack
+# IISM-CCU-Api
 
-CCU-Jack bietet einen einfachen und sicheren **REST**- und **MQTT**-basierten Zugriff auf die Datenpunkte der Zentrale (CCU) des [Hausautomations-Systems](http://de.wikipedia.org/wiki/Hausautomation) HomeMatic der Firma [eQ-3](http://www.eq-3.de/). Er implementiert dafür das [Very Easy Automation Protocol](https://github.com/mdzio/veap), welches von vielen Programmiersprachen leicht verwendet werden kann, und das [MQTT-Protokoll](https://de.wikipedia.org/wiki/MQTT), welches im Internet-of-Things weit verbreitet ist. Zudem können mit den genannten Protokollen auch Fremdgeräte an die CCU angebungen werden.
+IISM-CCU-Api bietet einen einfachen und sicheren **REST**- und **MQTT**-basierten Zugriff auf die Datenpunkte der Zentrale (CCU) des [Hausautomations-Systems](http://de.wikipedia.org/wiki/Hausautomation) HomeMatic der Firma [eQ-3](http://www.eq-3.de/). Er implementiert dafür das [Very Easy Automation Protocol](https://github.com/mdzio/veap), welches von vielen Programmiersprachen leicht verwendet werden kann, und das [MQTT-Protokoll](https://de.wikipedia.org/wiki/MQTT), welches im Internet-of-Things weit verbreitet ist. Zudem können mit den genannten Protokollen auch Fremdgeräte an die CCU angebungen werden.
 
-**Erstes Ziel vom CCU-Jack ist es, für andere Applikationen einen möglichst einfachen Zugriff auf die Datenpunkte der CCU zu ermöglichen.** Beispielsweise werden für den Zugriff auf eine CCU mit HM-, HM-Wired- und HM-IP-Geräten insgesamt 9 Netzwerkverbindung, teilweise als Rückkanal und mit unterschiedlichen Protokollen, benötigt. Zudem sind die Netzwerkschnittstellen der CCU unverschlüsselt, wodurch sie nicht in der Firewall der CCU freigeschaltet werden sollten. Der CCU-Jack standardisiert den Zugriff auf alle Geräte und Systemvariablen mit einem einheitlichen Protokoll und über eine verschlüsselte Verbindung.
+**Erstes Ziel vom IISM-CCU-Api ist es, für andere Applikationen einen möglichst einfachen Zugriff auf die Datenpunkte der CCU zu ermöglichen.** Beispielsweise werden für den Zugriff auf eine CCU mit HM-, HM-Wired- und HM-IP-Geräten insgesamt 9 Netzwerkverbindung, teilweise als Rückkanal und mit unterschiedlichen Protokollen, benötigt. Zudem sind die Netzwerkschnittstellen der CCU unverschlüsselt, wodurch sie nicht in der Firewall der CCU freigeschaltet werden sollten. Der IISM-CCU-Api standardisiert den Zugriff auf alle Geräte und Systemvariablen mit einem einheitlichen Protokoll und über eine verschlüsselte Verbindung.
 
 **Das zweite Ziel ist, möglichst einfach Fremdgeräte (z.B. WLAN-Steckdosen) an die CCU anzubinden und mit dieser zu automatisieren.** Angebundenen Fremdgeräte werden auf der CCU wie originale HM-Geräte dargestellt. Sie können über die Web-UI der CCU genauso bedient und beobachtet werden. Zudem können sie ohne Einschränkungen in CCU-Programmen verwendet werden.
 
-Funktional ist der CCU-Jack eine Alternative zum [XML-API Add-On](https://github.com/jens-maus/XML-API). Das XML-API Add-On wird seit längerer Zeit nicht mehr weiter entwickelt und enthält nicht behobene Fehler und Sicherheitslücken. Zudem kann der CCU-Jack die Kombination der zwei Add-Ons [hm2mqtt](https://github.com/owagner/hm2mqtt) und [Mosquitto](https://github.com/hobbyquaker/ccu-addon-mosquitto) ersetzen. Das Add-On hm2mqtt wird ebenfalls seit längerer Zeit nicht mehr weiter entwickelt.
+Funktional ist der IISM-CCU-Api eine Alternative zum [XML-API Add-On](https://github.com/jens-maus/XML-API). Das XML-API Add-On wird seit längerer Zeit nicht mehr weiter entwickelt und enthält nicht behobene Fehler und Sicherheitslücken. Zudem kann der IISM-CCU-Api die Kombination der zwei Add-Ons [hm2mqtt](https://github.com/owagner/hm2mqtt) und [Mosquitto](https://github.com/hobbyquaker/ccu-addon-mosquitto) ersetzen. Das Add-On hm2mqtt wird ebenfalls seit längerer Zeit nicht mehr weiter entwickelt.
 
-Bezügliche der Anbindung von Fremdgeräten ersetzt der CCU-Jack viele komplizierte und aufwändige Lösungen und bietet gleichzeitig mehr Funktionaliät.
+Bezügliche der Anbindung von Fremdgeräten ersetzt der IISM-CCU-Api viele komplizierte und aufwändige Lösungen und bietet gleichzeitig mehr Funktionaliät.
 
 ## Schnelleinstieg
 
 * [Download](#download)
-* [Beschreibung REST-API an Beispielen](https://github.com/mdzio/ccu-jack/blob/master/doc/curl.md)
+* [Beschreibung REST-API an Beispielen](https://github.com/IISM-IT-Consulting/iism-ccu-api/blob/master/doc/curl.md)
 * [Beschreibung MQTT-API](#beschreibung-der-mqtt-schnittstelle)
 * [Beschreibung der virtuellen Geräte](#virtuelle-geräte)
-* [Anbindung einer WLAN-Steckdose mit Tasmota-Firmware](https://github.com/mdzio/ccu-jack/blob/master/doc/tasmota.md)
+* [Anbindung einer WLAN-Steckdose mit Tasmota-Firmware](https://github.com/IISM-IT-Consulting/iism-ccu-api/blob/master/doc/tasmota.md)
 
 ## Hauptmerkmale
 
-Folgende Merkmale zeichnen CCU-Jack aus:
+Folgende Merkmale zeichnen IISM-CCU-Api aus:
 * Lese- und Schreibzugriff auf alle Gerätedatenpunkte (inkl. CUxD) und Systemvariablen der CCU.
 * Alle Datenpunkte können über die REST-API baumartig erkundet werden.
 * Umfangreiche Zusatzinformationen zu jedem Datenpunkt, z.B. Anzeigenamen, Räume, Gewerke, aber auch viele technische Informationen aus den XMLRPC-Schnittstellen und der ReGaHss stehen über die REST-API zur Verfügung.
@@ -35,18 +35,18 @@ Folgende Merkmale zeichnen CCU-Jack aus:
 
 ### Leitlinien für die Umsetzung
 
-Folgende Leitlinien sind bei der Entwicklung des CCU-Jacks maßgebend:
+Folgende Leitlinien sind bei der Entwicklung des IISM-CCU-Apis maßgebend:
 * **Einfache Installation** (Es soll z.B. keine Kommandozeile (SSH) oder ein Editieren von Konfigurationsdateien für die Inbetriebnahme benötigt werden.)
 * **Einfache Anbindung von Fremdapplikationen** (Anderen Entwicklern soll es möglichst leicht fallen, ihre Applikationen an die CCU anzubinden. Die komplexe Ankopplung von etlichen CCU-Prozessen entfällt.)
 * **Einfache Anbindung von IoT-Geräten** (IoT-Geräte sollen ohne Programmierung, Blockly oder Flows angebunden werden können.)
 * **Sicherheit auf dem Stand der Technik** (TLS V1.3 wird unterstützt.)
-* **Robust und leistungsfähig** (Hunderte von Clients werden gleichzeitig unterstützt. CCU-Jack enthält einen der schnellsten MQTT-Server.)
+* **Robust und leistungsfähig** (Hunderte von Clients werden gleichzeitig unterstützt. IISM-CCU-Api enthält einen der schnellsten MQTT-Server.)
 
 ### Fahrplan
 
-Mit der Veröffentlichung der V1.0 ist die für den CCU-Jack ursprünglich angedachte Funktionalität implementiert. Die REST-API (z.B. Pfade und Datenformat) und die MQTT-API (z.B. Topic-Aufbau) gelten als stabil. Alle zukünftigen Versionen erweitern höchstens das Grundgerüst (z.B. zusätzliche Pfade/Topics/Attribute). Alle Clients, die für die V1.0 entwickelt werden, sollten ohne Änderung mit zukünftigen Versionen des CCU-Jacks funktionieren.
+Mit der Veröffentlichung der V1.0 ist die für den IISM-CCU-Api ursprünglich angedachte Funktionalität implementiert. Die REST-API (z.B. Pfade und Datenformat) und die MQTT-API (z.B. Topic-Aufbau) gelten als stabil. Alle zukünftigen Versionen erweitern höchstens das Grundgerüst (z.B. zusätzliche Pfade/Topics/Attribute). Alle Clients, die für die V1.0 entwickelt werden, sollten ohne Änderung mit zukünftigen Versionen des IISM-CCU-Apis funktionieren.
 
-Bisher hat der CCU-Jack primär Fremdapplikationen einen leichten Zugriff auf die Datenpunkte der CCU über das Netzwerk ermöglicht. Es soll aber auch der Logik-Schicht der CCU (ReGaHss) selbst ermöglicht werden, Daten aus Fremdsystemen oder -geräten abzufragen oder an diese zu übertragen. Dazu unterstützt der CCU-Jack ab Version 2 virtuelle Geräte in der CCU. Diese bieten eine nahtlose Integration in die Bedien- und Beobachtungsoberfläche der CCU und können in CCU-Programmen wie reale Geräte abgefragt und gesteuert werden.
+Bisher hat der IISM-CCU-Api primär Fremdapplikationen einen leichten Zugriff auf die Datenpunkte der CCU über das Netzwerk ermöglicht. Es soll aber auch der Logik-Schicht der CCU (ReGaHss) selbst ermöglicht werden, Daten aus Fremdsystemen oder -geräten abzufragen oder an diese zu übertragen. Dazu unterstützt der IISM-CCU-Api ab Version 2 virtuelle Geräte in der CCU. Diese bieten eine nahtlose Integration in die Bedien- und Beobachtungsoberfläche der CCU und können in CCU-Programmen wie reale Geräte abgefragt und gesteuert werden.
 
 Langfristig sind daher folgende Erweiterungen geplant:
 * Virtuelle Geräte für HTTP-Abfragen
@@ -56,19 +56,19 @@ Zukünftige Ideen:
 
 ## Unterstützung
 
-Die größte Benutzergemeinde und auch der Hauptentwickler des CCU-Jacks sind im [HomeMatic-Forum](https://homematic-forum.de/forum/viewtopic.php?f=41&t=53553) zu finden.
+Die größte Benutzergemeinde und auch der Hauptentwickler des IISM-CCU-Apis sind im [HomeMatic-Forum](https://homematic-forum.de/forum/viewtopic.php?f=41&t=53553) zu finden.
 
 ## Download
 
-Distributionen für die verschiedenen Zielsysteme sind auf der Seite [Releases](https://github.com/mdzio/ccu-jack/releases) zu finden. 
+Distributionen für die verschiedenen Zielsysteme sind auf der Seite [Releases](https://github.com/IISM-IT-Consulting/iism-ccu-api/releases) zu finden. 
 
 ### Installation als Add-On auf der CCU
 
 _Hinweis: Generell sollte vor der Installation von Add-Ons auf der CCU ein System-Backup erstellt werden._
 
-Der CCU-Jack sollte als Add-On auf der CCU installiert werden. **Nur bei einer Add-On-Installation können auch virtuelle Geräte genutzt werden.** Dies erfolgt über die Web-UI der CCU unter _Einstellungen_ → _Systemsteuerung_ → _Zusatzsoftware_. In diesem Dialog kann auch ein Neustart des CCU-Jacks durchgeführt werden. (Ein Neustart des CCU-Jacks dauert 15-20 Sekunden.)
+Der IISM-CCU-Api sollte als Add-On auf der CCU installiert werden. **Nur bei einer Add-On-Installation können auch virtuelle Geräte genutzt werden.** Dies erfolgt über die Web-UI der CCU unter _Einstellungen_ → _Systemsteuerung_ → _Zusatzsoftware_. In diesem Dialog kann auch ein Neustart des IISM-CCU-Apis durchgeführt werden. (Ein Neustart des IISM-CCU-Apis dauert 15-20 Sekunden.)
 
-Bei einer Installation als Add-On auf der CCU können die Startparameter in der Datei `/usr/local/etc/config/rc.d/ccu-jack` angepasst werden. In der Regel ist dies nicht notwendig. Log-Meldungen werden in die Datei `/var/log/ccu-jack.log` geschrieben.
+Bei einer Installation als Add-On auf der CCU können die Startparameter in der Datei `/usr/local/etc/config/rc.d/iism-ccu-api` angepasst werden. In der Regel ist dies nicht notwendig. Log-Meldungen werden in die Datei `/var/log/iism-ccu-api.log` geschrieben.
 
 In der Firewall der CCU müssen je nach Anwendungsfall die Ports 2121 (HTTP), 2122 (HTTPS), 1883 (MQTT) und 8883 (Secure MQTT) freigegeben werden:
 
@@ -76,7 +76,7 @@ In der Firewall der CCU müssen je nach Anwendungsfall die Ports 2121 (HTTP), 21
 
 ### Installation in einer Docker-Umgebung
 
-Der CCU-Jack kann auch in einer Docker-Umgebung ausgeführt werden. Das Erstellen des Images und das Starten sind in [dieser Anleitung](https://github.com/mdzio/ccu-jack/tree/master/dist/docker) beschrieben. Ein fertiges Image ist unter [thetagamma/ccu-jack](https://hub.docker.com/r/thetagamma/ccu-jack) zu finden.
+Der IISM-CCU-Api kann auch in einer Docker-Umgebung ausgeführt werden. Das Erstellen des Images und das Starten sind in [dieser Anleitung](https://github.com/IISM-IT-Consulting/iism-ccu-api/tree/master/dist/docker) beschrieben. Ein fertiges Image ist unter [thetagamma/iism-ccu-api](https://hub.docker.com/r/thetagamma/iism-ccu-api) zu finden.
 
 Virtuelle Geräte werden in der Docker-Umgebung nicht unterstützt.
 
@@ -86,11 +86,11 @@ Für ein Update darf die vorhandene Installation nicht deinstalliert werden, da 
 
 ### Deinstallation
 
-Vor einer Deinstallation sind alle eventuell eingerichteten virtuellen Geräte über die Web-UI des CCU-Jacks oder der CCU zu löschen.
+Vor einer Deinstallation sind alle eventuell eingerichteten virtuellen Geräte über die Web-UI des IISM-CCU-Apis oder der CCU zu löschen.
 
 ## Bauen aus den Quellen
 
-Der CCU-Jack ist in der [Programmiersprache Go](https://golang.org/) (min. Version 1.15) geschrieben. Alle Distributionen des CCU-Jacks können sehr einfach und schnell auf allen möglichen Plattformen (u.a. Windows, Linux, MacOS) gebaut werden. Dafür in einem beliebigen Verzeichnis das Git-Repository klonen, oder die Quellen hinein kopieren. Danach in diesem Verzeichnis eine Kommandozeile öffnen, und folgende Befehle eingeben:
+Der IISM-CCU-Api-Api-Api ist in der [Programmiersprache Go](https://golang.org/) (min. Version 1.15) geschrieben. Alle Distributionen des IISM-CCU-Api-Api-Api-Api-Api-Api-Api-Api-Api-Apis können sehr einfach und schnell auf allen möglichen Plattformen (u.a. Windows, Linux, MacOS) gebaut werden. Dafür in einem beliebigen Verzeichnis das Git-Repository klonen, oder die Quellen hinein kopieren. Danach in diesem Verzeichnis eine Kommandozeile öffnen, und folgende Befehle eingeben:
 ```
 cd build
 go run .
@@ -105,7 +105,7 @@ Mitwirkende sind natürlich gerne gesehen. Sei es für die Dokumentation, das Te
 
 ## Konfiguration
 
-Die Konfiguration des CCU-Jacks erfolgt über die Datei `ccu-jack.cfg`, die im Installationsverzeichnis zu finden ist. Viele Konfigurationsoptionen können bereits über das Web-UI geändert werden. Ansonsten kann diese Datei mit einem Texteditor angepasst werden, während der CCU-Jack nicht gestartet ist. Das Format der Datei ist [JSON](https://de.wikipedia.org/wiki/JavaScript_Object_Notation). Bei einer Installation als Add-On auf der CCU muss in der Regel die Konfigurationsdatei nicht angepasst werden.
+Die Konfiguration des IISM-CCU-Api-Api-Api-Api-Api-Api-Api-Apis erfolgt über die Datei `iism-ccu-api.cfg`, die im Installationsverzeichnis zu finden ist. Viele Konfigurationsoptionen können bereits über das Web-UI geändert werden. Ansonsten kann diese Datei mit einem Texteditor angepasst werden, während der IISM-CCU-Api-Api-Api-Api nicht gestartet ist. Das Format der Datei ist [JSON](https://de.wikipedia.org/wiki/JavaScript_Object_Notation). Bei einer Installation als Add-On auf der CCU muss in der Regel die Konfigurationsdatei nicht angepasst werden.
 
 Beispielkonfigurationsdatei:
 ```
@@ -117,7 +117,7 @@ Beispielkonfigurationsdatei:
       "HmIPRF",
       "VirtualDevices"
     ],
-    "InitID": "CCU-Jack"
+    "InitID": "IISM-CCU-Api-Api"
   },
   "Host": {
     "Name": "",
@@ -125,7 +125,7 @@ Beispielkonfigurationsdatei:
   },
   "Logging": {
     "Level": "INFO",
-    "FilePath": "ccu-jack.log"
+    "FilePath": "iism-ccu-api.log"
   },
   "HTTP": {
     "Port": 2121,
@@ -157,13 +157,13 @@ Beispielkonfigurationsdatei:
 }
 ```
 
-Folgende zwei Optionen müssen mindestens vor dem ersten Start angepasst werden. Die IP-Adresse der CCU muss mit der Option `CCU.Address` gesetzt werden. Die IP-Adresse des Rechners, auf dem der CCU-Jack gestartet wird, muss mit der Option `Host.Address` gesetzt werden. Beide Optionen können auf `127.0.0.1` gesetzt werden, wenn der CCU-Jack direkt auf der CCU gestartet wird.
+Folgende zwei Optionen müssen mindestens vor dem ersten Start angepasst werden. Die IP-Adresse der CCU muss mit der Option `CCU.Address` gesetzt werden. Die IP-Adresse des Rechners, auf dem der IISM-CCU-Api gestartet wird, muss mit der Option `Host.Address` gesetzt werden. Beide Optionen können auf `127.0.0.1` gesetzt werden, wenn der IISM-CCU-Api direkt auf der CCU gestartet wird.
 
 Log-Meldungen werden auf der Fehlerausgabe (STDERR) oder in die mit der Option `Logging.FilePath` angegebenen Datei ausgegeben, wenn sie mindestens die mit der Option `Logging.Level` gesetzte Dringlichkeit (OFF, ERROR, WARNING, INFO, DEBUG oder TRACE) besitzen.
 
 ## Anbindung CUxD
 
-Der CCU-Jack kann auch die Datenpunkte des CUxD Add-Ons anbinden. Dies kann in der Web-UI des CCU-Jacks auf der Konfigurationsseite aktiviert werden. Eine Änderung der Option erfordert immer einen Neustart des CCU-Jacks. Neu angelegte CUxD-Geräte werden ebenfalls erst nach einem Neustart des CCU-Jacks erkannt.
+Der IISM-CCU-Api kann auch die Datenpunkte des CUxD Add-Ons anbinden. Dies kann in der Web-UI des IISM-CCU-Apis auf der Konfigurationsseite aktiviert werden. Eine Änderung der Option erfordert immer einen Neustart des IISM-CCU-Apis. Neu angelegte CUxD-Geräte werden ebenfalls erst nach einem Neustart des IISM-CCU-Apis erkannt.
 
 ## Performance
 
@@ -176,7 +176,7 @@ Folgende Angaben gelten für eine Installation als Add-On auf einer CCU3 (Raspbe
 
 ## Web-basierte Benutzerschnittstelle
 
-Die web-basierte Benutzerschnittstelle des CCU-Jacks ist über die Adressen `http://<host>:2121/ui` und `https://<host>:2122/ui` zu erreichen. `<host>` ist durch den Rechnernamen oder die IP-Adresse des Rechners zu ersetzen, auf dem CCU-Jack gestartet worden ist. Wenn es der lokale Rechner ist, kann auch `localhost` verwendet werden.
+Die web-basierte Benutzerschnittstelle des IISM-CCU-Apis ist über die Adressen `http://<host>:2121/ui` und `https://<host>:2122/ui` zu erreichen. `<host>` ist durch den Rechnernamen oder die IP-Adresse des Rechners zu ersetzen, auf dem IISM-CCU-Api gestartet worden ist. Wenn es der lokale Rechner ist, kann auch `localhost` verwendet werden.
 
 Mit Hilfe des Navigators können alle verfügbaren Datenpunkte erkundet werden:
 
@@ -194,11 +194,11 @@ Variablen können für die Überwachung ausgewählt werden. Es werden in Echtzei
 
 ![Überwachung](doc/web-ui-watcher.png)
 
-Für eine nahtlose Integration in die Logik-Schicht der CCU (ReGaHss) unterstützt der CCU-Jack *virtuelle Geräte*:
+Für eine nahtlose Integration in die Logik-Schicht der CCU (ReGaHss) unterstützt der IISM-CCU-Api *virtuelle Geräte*:
 
 ![Virtuelle Geräte](doc/web-ui-virtualdevices.png)
 
-Die wichtigsten Konfigurationsoptionen des CCU-Jacks können über die Web-Oberfläche geändert werden:
+Die wichtigsten Konfigurationsoptionen des IISM-CCU-Apis können über die Web-Oberfläche geändert werden:
 
 ![Konfiguration](doc/web-ui-config.png)
 
@@ -208,9 +208,9 @@ Die Diagnoseseite hilft bei der Fehlersuche weiter:
 
 ## Beschreibung der VEAP-Dienste/REST-API
 
-Für den Zugriff auf die Datenpunkte wird das [Very Easy Automation Protocol](https://github.com/mdzio/veap) vom CCU-Jack implementiert.
+Für den Zugriff auf die Datenpunkte wird das [Very Easy Automation Protocol](https://github.com/mdzio/veap) vom IISM-CCU-Api implementiert.
 
-Mit dem [Kommandozeilenwerkzeug CURL](https://curl.haxx.se), das praktisch für alle Betriebssysteme und Plattformen verfügbar ist, können alle VEAP-Dienste (z.B. Datenpunkte lesen und setzen) des CCU-Jacks genutzt werden. Die Beschreibung ist auf einer [eigenen Seite](https://github.com/mdzio/ccu-jack/blob/master/doc/curl.md) zu finden.
+Mit dem [Kommandozeilenwerkzeug CURL](https://curl.haxx.se), das praktisch für alle Betriebssysteme und Plattformen verfügbar ist, können alle VEAP-Dienste (z.B. Datenpunkte lesen und setzen) des IISM-CCU-Apis genutzt werden. Die Beschreibung ist auf einer [eigenen Seite](https://github.com/IISM-IT-Consulting/iism-ccu-api/blob/master/doc/curl.md) zu finden.
 
 Die Abbildung der CCU-Datentypen auf JSON ist [weiter unten](#abbildung-der-ccu-datentypen) zu finden.
 
@@ -222,7 +222,7 @@ Das Schreiben eines Datenpunktes kann zusätzlich durch ein HTTP-GET mit dem URL
 
 Beispiele: 
 
-Die nötigen Datenpunktadressen können über den [Navigator des CCU-Jacks](#web-basierte-benutzerschnittstelle) ermittelt werden.
+Die nötigen Datenpunktadressen können über den [Navigator des IISM-CCU-Apis](#web-basierte-benutzerschnittstelle) ermittelt werden.
 ```
 GET /number_datapoint/~pv?writepv=123.456
 GET /boolean_datapoint/~pv?writepv=true
@@ -241,7 +241,7 @@ GET /string_datapoint/~pv?format=simple | ABC abc
 
 ## Beschreibung der MQTT-Schnittstelle
 
-Der CCU-Jack enthält einen vollwertigen und leistungsfähigen MQTT-Server (V3.1.1). Dieser kann von beliebigen Fremdapplikationen genutzt werden. Zudem werden die Wertänderungen aller Gerätedatenpunkte der CCU und ausgewählter Systemvariablen automatisch an den MQTT-Server gesendet und stehen daraufhin allen MQTT-Clients zur Verfügung. Die Netzwerk-Ports können mit den Optionen `MQTT.Port` und `MQTT.PortTLS` eingestellt werden. Ein Zugriff über Web-Sockets ist über den Pfad `/ws-mqtt` des HTTP(S)-Servers möglich.
+Der IISM-CCU-Api enthält einen vollwertigen und leistungsfähigen MQTT-Server (V3.1.1). Dieser kann von beliebigen Fremdapplikationen genutzt werden. Zudem werden die Wertänderungen aller Gerätedatenpunkte der CCU und ausgewählter Systemvariablen automatisch an den MQTT-Server gesendet und stehen daraufhin allen MQTT-Clients zur Verfügung. Die Netzwerk-Ports können mit den Optionen `MQTT.Port` und `MQTT.PortTLS` eingestellt werden. Ein Zugriff über Web-Sockets ist über den Pfad `/ws-mqtt` des HTTP(S)-Servers möglich.
 
 Um das MQTT-Protokoll hat sich ein großes Ökosystem gebildet. Eine Übersicht ist in dieser [Link-Sammlung](https://github.com/hobbyquaker/awesome-mqtt) zu finden.
 
@@ -273,37 +273,37 @@ Für das Setzen von Datenpunkten wird nur die Eigenschaft `v` benötigt. Beispie
 
 Die Retain-Eigenschaft wird bei allen Datenpunkten gesetzt, außer der Parametername ist *INSTALL_TEST* oder beginnt mit *PRESS_*.
 
-_Hinweis:_ Homematic **IP** Sender (z.B. Taster) senden erst Benachrichtigungen an die CCU und damit an den CCU-Jack, wenn sie in einem CCU-Programm verwendet werden. Gegebenenfalls müssen sie also in einem funktionslosen CCU-Programm als Auslöser angegeben werden. (Stichwort: reportValueUsage)
+_Hinweis:_ Homematic **IP** Sender (z.B. Taster) senden erst Benachrichtigungen an die CCU und damit an den IISM-CCU-Api, wenn sie in einem CCU-Programm verwendet werden. Gegebenenfalls müssen sie also in einem funktionslosen CCU-Programm als Auslöser angegeben werden. (Stichwort: reportValueUsage)
 
 Die Abbildung der CCU-Datentypen auf JSON ist im nächsten Abschnitt zu finden.
 
 ## Virtuelle Geräte
 
-Ab Version 2 des CCU-Jacks werden virtuelle Geräte in der CCU unterstützt. Diese bieten eine nahtlose Integration in die Bedien- und Beobachtungsoberfläche der CCU und können in CCU-Programmen wie reale Geräte abgefragt und gesteuert werden. Dadurch wird der Logik-Schicht der CCU (ReGaHss) selbst ermöglicht, Daten aus Fremdsystemen oder -geräten abzufragen oder an diese zu übertragen. 
+Ab Version 2 des IISM-CCU-Apis werden virtuelle Geräte in der CCU unterstützt. Diese bieten eine nahtlose Integration in die Bedien- und Beobachtungsoberfläche der CCU und können in CCU-Programmen wie reale Geräte abgefragt und gesteuert werden. Dadurch wird der Logik-Schicht der CCU (ReGaHss) selbst ermöglicht, Daten aus Fremdsystemen oder -geräten abzufragen oder an diese zu übertragen. 
 
-**Achtung:** Virtuelle Geräte funktionieren nur dann, wenn der CCU-Jack als Add-On auf der CCU installiert wurde. Eine neue Geräteschnittstelle wird zur Projektierung der CCU hinzugefügt. Der Hersteller der CCU kann unter Umständen Support-Leistungen ablehnen. Dies betrifft generell jede zusätzlich installierte Software auf der CCU.
+**Achtung:** Virtuelle Geräte funktionieren nur dann, wenn der IISM-CCU-Api als Add-On auf der CCU installiert wurde. Eine neue Geräteschnittstelle wird zur Projektierung der CCU hinzugefügt. Der Hersteller der CCU kann unter Umständen Support-Leistungen ablehnen. Dies betrifft generell jede zusätzlich installierte Software auf der CCU.
 
-Virtuelle Geräte müssen als erstes in der Konfiguration des CCU-Jacks aktiviert werden. Danach ist ein Neustart der CCU erforderlich. Virtuelle Geräte werden dann über die Web-UI des CCU-Jacks angelegt und auch die gewünschten Kanäle hinzugefügt. Neu angelegte Geräte erscheinen direkt im Geräte-Posteingang der CCU. Spezifische Einstellungen der Geräte können dann in der CCU vorgenommen werden (_Einstellungen_ → _Geräte_ → Gerät auswählen → _Einstellen_).
+Virtuelle Geräte müssen als erstes in der Konfiguration des IISM-CCU-Apis aktiviert werden. Danach ist ein Neustart der CCU erforderlich. Virtuelle Geräte werden dann über die Web-UI des IISM-CCU-Apis angelegt und auch die gewünschten Kanäle hinzugefügt. Neu angelegte Geräte erscheinen direkt im Geräte-Posteingang der CCU. Spezifische Einstellungen der Geräte können dann in der CCU vorgenommen werden (_Einstellungen_ → _Geräte_ → Gerät auswählen → _Einstellen_).
 
-**Achtung:** Wenn noch virtuelle Geräte auf der CCU angelegt sind, und der CCU-Jack deinstalliert und erneut installiert wird, so werden die vorhandenen virtuellen Geräte gelöscht. Die vorhandene Konfigurationsdatei `ccu-jack.cfg` mit den virtuellen Geräten wird in diesem Fall durch eine leere ersetzt. Um den CCU-Jack zu aktualisieren, die neue Version einfach über die bereits vorhandene Version installieren. Dadurch wird die vorhandene Konfigurationsdatei übernommen.
+**Achtung:** Wenn noch virtuelle Geräte auf der CCU angelegt sind, und der IISM-CCU-Api deinstalliert und erneut installiert wird, so werden die vorhandenen virtuellen Geräte gelöscht. Die vorhandene Konfigurationsdatei `iism-ccu-api.cfg` mit den virtuellen Geräten wird in diesem Fall durch eine leere ersetzt. Um den IISM-CCU-Api zu aktualisieren, die neue Version einfach über die bereits vorhandene Version installieren. Dadurch wird die vorhandene Konfigurationsdatei übernommen.
 
-Der CCU-Jack bietet die Möglichkeit virtuelle Geräte aus bis zu 32 beliebigen Kanalfunktionen zusammenzustellen. Dadurch können alle Funktionen und Messwerte eines Fremdgerätes in einem Gerät auf der CCU nachgebildet werden.
+Der IISM-CCU-Api bietet die Möglichkeit virtuelle Geräte aus bis zu 32 beliebigen Kanalfunktionen zusammenzustellen. Dadurch können alle Funktionen und Messwerte eines Fremdgerätes in einem Gerät auf der CCU nachgebildet werden.
 
-[Der CCU-Jack unterstützt eine Vielzahl an virtuellen Geräten. Deren Funktionen sind an gesonderter Stelle beschrieben.](https://github.com/mdzio/ccu-jack/blob/master/doc/virtual-devices.md)
+[Der IISM-CCU-Api unterstützt eine Vielzahl an virtuellen Geräten. Deren Funktionen sind an gesonderter Stelle beschrieben.](https://github.com/IISM-IT-Consulting/iism-ccu-api/blob/master/doc/virtual-devices.md)
 
-[Beispielanbindung einer WLAN-Steckdose mit Tasmota-Firmware.](https://github.com/mdzio/ccu-jack/blob/master/doc/tasmota.md)
+[Beispielanbindung einer WLAN-Steckdose mit Tasmota-Firmware.](https://github.com/IISM-IT-Consulting/iism-ccu-api/blob/master/doc/tasmota.md)
 
 ### Deinstallation der virtuellen Geräte
 
-Falls alle virtuellen Geräte und die CCU-Jack Geräteschnittstelle aus der CCU-Projektierung entfernt werden sollen, ist wie folgt vorzugehen:
-* Alle virtuellen Geräte über die Web-UI des CCU-Jacks oder der CCU löschen.
-* Unterstützung für virtuelle Geräte im CCU-Jack deaktivieren.
+Falls alle virtuellen Geräte und die IISM-CCU-Api Geräteschnittstelle aus der CCU-Projektierung entfernt werden sollen, ist wie folgt vorzugehen:
+* Alle virtuellen Geräte über die Web-UI des IISM-CCU-Apis oder der CCU löschen.
+* Unterstützung für virtuelle Geräte im IISM-CCU-Api deaktivieren.
 * CCU neu starten.
 * Das HM-Skript (unten) zum Entfernen der Geräteschnittstelle ausführen.
 
 Skript zum Entfernen der Geräteschnittstelle:
 ```
-var i = dom.GetObject('CCU-Jack');
+var i = dom.GetObject('IISM-CCU-Api');
 if (i) {
   WriteLine('Entferne ' # i.ID() # ' ' # i.Name());
   dom.GetObject(ID_INTERFACES).Remove(i);
@@ -331,23 +331,23 @@ Bei den Datentypen INTEGER, ENUM oder FLOAT sollte der zu setzende Wert größer
 
 ### Android App _MQTT Dash_
 
-Mit der kostenlosen Android App [MQTT Dash (IoT, Smart Home)](https://play.google.com/store/apps/details?id=net.routix.mqttdash&hl=de_DE) können Dashboards erstellt und über den CCU-Jack an die CCU angebunden werden.
+Mit der kostenlosen Android App [MQTT Dash (IoT, Smart Home)](https://play.google.com/store/apps/details?id=net.routix.mqttdash&hl=de_DE) können Dashboards erstellt und über den IISM-CCU-Api an die CCU angebunden werden.
 
 ### Android App _HTTP Request Shortcuts_
 
-CCU-Jack ermöglicht der ebenfalls kostenlosen Android App [HTTP Request Shortcuts](https://play.google.com/store/apps/details?id=ch.rmy.android.http_shortcuts&hl=de_DE) einfachen Zugriff auf die Datenpunkte der CCU. So können beispielsweise Geräte direkt vom Home-Screen geschaltet werden. Beispiele sind auf einer [eigenen Seite](https://github.com/mdzio/ccu-jack/blob/master/doc/httpshortcuts.md) zu finden.
+IISM-CCU-Api ermöglicht der ebenfalls kostenlosen Android App [HTTP Request Shortcuts](https://play.google.com/store/apps/details?id=ch.rmy.android.http_shortcuts&hl=de_DE) einfachen Zugriff auf die Datenpunkte der CCU. So können beispielsweise Geräte direkt vom Home-Screen geschaltet werden. Beispiele sind auf einer [eigenen Seite](https://github.com/IISM-IT-Consulting/iism-ccu-api/blob/master/doc/httpshortcuts.md) zu finden.
 
 ## Sicherheit
 
 ### Cross-origin resource sharing (CORS)
 
-Um fremden Web-Applikationen den Zugriff auf die VEAP-API des CCU-Jacks zu ermöglichen, wird CORS vollständig unterstützt. In der Standardkonfiguration werden alle anfragenden Quellen zugelassen (`Access-Control-Allow-Origin: *`). Falls die Authentifizierung eingeschaltet ist (s.a. Kommandozeilenoptionen `-user` und `-password`) muss die Anfragequelle explizit zugelassen werden. Dies erfolgt mit der Kommandozeilenoption `-cors`.
+Um fremden Web-Applikationen den Zugriff auf die VEAP-API des IISM-CCU-Apis zu ermöglichen, wird CORS vollständig unterstützt. In der Standardkonfiguration werden alle anfragenden Quellen zugelassen (`Access-Control-Allow-Origin: *`). Falls die Authentifizierung eingeschaltet ist (s.a. Kommandozeilenoptionen `-user` und `-password`) muss die Anfragequelle explizit zugelassen werden. Dies erfolgt mit der Kommandozeilenoption `-cors`.
 
 Beispiel: Die Web-Applikation auf dem Host `https://example.com` soll mit Authentifizierung auf die VEAP-API zugreifen können. Dafür muss die Kommandozeilenoption `-cors https://example.com` gesetzt werden.
 
 ### Sicherer Zugriff über TLS
 
-CCU-Jack ermöglicht einen verschlüsselten Zugriff über HTTPS, sodass auch über unsichere Netzwerke (z.B. Internet) Daten sicher ausgetauscht werden könnan. Über den Port 2122 (änderbar mit der Konfigurationsoption `HTTP.PortTLS`) kann eine HTTPS-Verbindung aufgebaut werden. Analog gilt dies auch für MQTT-Verbindungen. Die dafür benötigten Zertifikate können vorgegeben werden oder werden beim ersten Start vom CCU-Jack automatisch generiert. Dies kann mit der Konfigurationsoption `Certificates.AutoGenerate` eingestellt werden.
+IISM-CCU-Api ermöglicht einen verschlüsselten Zugriff über HTTPS, sodass auch über unsichere Netzwerke (z.B. Internet) Daten sicher ausgetauscht werden könnan. Über den Port 2122 (änderbar mit der Konfigurationsoption `HTTP.PortTLS`) kann eine HTTPS-Verbindung aufgebaut werden. Analog gilt dies auch für MQTT-Verbindungen. Die dafür benötigten Zertifikate können vorgegeben werden oder werden beim ersten Start vom IISM-CCU-Api automatisch generiert. Dies kann mit der Konfigurationsoption `Certificates.AutoGenerate` eingestellt werden.
 
 Benötigte Zertifikatsdateien für den Server (vorhanden oder auto-generiert):
 

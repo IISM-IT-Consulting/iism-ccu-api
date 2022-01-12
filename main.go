@@ -12,11 +12,11 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/IISM-IT-Consulting/iism-ccu-api/mqtt"
+	"github.com/IISM-IT-Consulting/iism-ccu-api/rtcfg"
+	"github.com/IISM-IT-Consulting/iism-ccu-api/virtdev"
+	"github.com/IISM-IT-Consulting/iism-ccu-api/vmodel"
 	"github.com/gorilla/handlers"
-	"github.com/mdzio/ccu-jack/mqtt"
-	"github.com/mdzio/ccu-jack/rtcfg"
-	"github.com/mdzio/ccu-jack/virtdev"
-	"github.com/mdzio/ccu-jack/vmodel"
 	"github.com/mdzio/go-hmccu/itf"
 	"github.com/mdzio/go-hmccu/script"
 	"github.com/mdzio/go-lib/httputil"
@@ -42,7 +42,7 @@ var (
 	appVersion = "-dev-" // overwritten during build process
 
 	// command line options
-	configFile = flag.String("config", "ccu-jack.cfg", "configuration `file`")
+	configFile = flag.String("config", "iism-ccu-api.cfg", "configuration `file`")
 
 	// global shutdown signals
 	serveErr = make(chan error)
@@ -200,7 +200,7 @@ func newRoot(handlerStats *veap.HandlerStats) *model.Root {
 	r := new(model.Root)
 	r.Identifier = "root"
 	r.Title = "Root"
-	r.Description = "Root of the CCU-Jack VEAP server"
+	r.Description = "Root of the IISM-CCU-Api VEAP server"
 	r.ItemRole = "domain"
 
 	// vendor domain
@@ -248,7 +248,7 @@ func runBase() error {
 	handler = &HTTPAuthHandler{
 		Handler: veapHandler,
 		Store:   &store,
-		Realm:   "CCU-Jack VEAP-Server",
+		Realm:   "IISM-CCU-Api VEAP-Server",
 	}
 
 	// CORS handler for VEAP
@@ -302,8 +302,8 @@ func waitForReGaHss() (shutdown bool, err error) {
 	l := true
 	for {
 		// test ReGaHss
-		resp, err := scriptClient.Execute("WriteLine(\"Hello CCU-Jack!\");")
-		if err == nil && len(resp) == 1 && resp[0] == "Hello CCU-Jack!" {
+		resp, err := scriptClient.Execute("WriteLine(\"Hello IISM-CCU-Api!\");")
+		if err == nil && len(resp) == 1 && resp[0] == "Hello IISM-CCU-Api!" {
 			return false, nil
 		}
 

@@ -1,4 +1,4 @@
-module github.com/mdzio/ccu-jack
+module github.com/IISM-IT-Consulting/iism-ccu-api
 
 go 1.17
 

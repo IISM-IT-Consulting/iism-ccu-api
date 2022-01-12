@@ -1,17 +1,17 @@
 version: "3"
 # 
 services:
-  ccu-jack:
-    image: thetagamma/ccu-jack:latest
+  iism-ccu-api:
+    image: thetagamma/iism-ccu-api:latest
     # to use a local image use instead
-    # image: ccu-jack:latest
-    container_name: ccu-jack
-    hostname: ccu-jack
+    # image: iism-ccu-api:latest
+    container_name: iism-ccu-api
+    hostname: iism-ccu-api
     environment:
       - TZ=Europe/Berlin
     volumes:
-        # adjust $PWD/conf/ccu-jack.cfg accordingly
-      - $PWD/conf/ccu-jack.cfg:/app/conf/ccu-jack.cfg
+        # adjust $PWD/conf/iism-ccu-api.cfg accordingly
+      - $PWD/conf/iism-ccu-api.cfg:/app/conf/iism-ccu-api.cfg
       # adjust Certificate path accordingly
       - $PWD/cert:/app/cert
     security_opt:
@@ -21,9 +21,9 @@ services:
       - 1883:1883
       # MQTT TLS
       - 8883:8883
-      # CCU-Jack VEAM/UI
+      # iism-ccu-api VEAM/UI
       - 2121:2121
-      # CCU-Jack VEAM/UI TLS
+      # IISM-CCU-Api VEAM/UI TLS
       - 2122:2122
       # CUxD
       - 2123:2123

@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # add-on information
-ADDON_ID=ccu-jack
-ADDON_NAME="CCU-Jack"
-ADDON_COPYRIGHT="(c) 2019-2021 info@ccu-historian.de"
-ADDON_WWW='<a href="https://github.com/mdzio/ccu-jack" target="_blank">https://github.com/mdzio/ccu-jack</a>'
+ADDON_ID=iism-ccu-api
+ADDON_NAME="IISM CCU Api"
+ADDON_COPYRIGHT="(c) 2019-2022 kontakt@iism.de"
+ADDON_WWW='<a href="https://github.com/IISM-IT-Consulting/iism-ccu-api" target="_blank">https://github.com/IISM-IT-Consulting/iism-ccu-api</a>'
 
 # directories
 ADDON_DIR=/usr/local/addons/${ADDON_ID}

@@ -49,7 +49,7 @@ curl http://127.0.0.1:2121
 Antwort:
 ```json
 {
-  "description": "Root of the CCU-Jack VEAP server",
+  "description": "Root of the IISM-CCU-Api VEAP server",
   "identifier": "root",
   "title": "Root",
   "~links": [
@@ -352,7 +352,7 @@ Das Gleiche gilt analog für ein Gewerk.
 
 ## Lesen einer Geräte- pzw. Kanalkonfiguration
 
-HomeMatic Geräte und die zugehörigen Kanäle können Konfigurationoptionen besitzen. Sie befinden sich im sogenannten Parametersatz MASTER. Über die REST-API des CCU-Jacks kann dieser Parametersatz gelsesen und gesetzt werden. Im Folgenden Beispiel werden die Konfigurationsdaten eines Kanals einer Innensirene gelesen.
+HomeMatic Geräte und die zugehörigen Kanäle können Konfigurationoptionen besitzen. Sie befinden sich im sogenannten Parametersatz MASTER. Über die REST-API des IISM-CCU-Apis kann dieser Parametersatz gelsesen und gesetzt werden. Im Folgenden Beispiel werden die Konfigurationsdaten eines Kanals einer Innensirene gelesen.
 
 Aufruf:
 ```
@@ -404,7 +404,7 @@ Die Informationen zu einem Programm können anhand der ISE-ID abgefragt werden. 
 curl  http://localhost:2121/program/123
 ```
 
-Ein CCU-Programm ist im CCU-Jack auch eine Variable. Der Zeitpunkt der letzten Ausführung kann durch das Lesen des Variablenwertes ermittelt werden. Der Zeitstempel des Prozesswertes (Eigenschaft `ts`) entspricht dem Zeitpunkt der letzten Ausführung:
+Ein CCU-Programm ist im IISM-CCU-Api auch eine Variable. Der Zeitpunkt der letzten Ausführung kann durch das Lesen des Variablenwertes ermittelt werden. Der Zeitstempel des Prozesswertes (Eigenschaft `ts`) entspricht dem Zeitpunkt der letzten Ausführung:
 ```
 curl  http://localhost:2121/program/123/~pv
 ```
@@ -432,11 +432,11 @@ Antwort:
   "description": "Information about the server and the vendor",
   "identifier": "~vendor",
   "serverDescription": "VEAP-Server for the HomeMatic CCU",
-  "serverName": "CCU-Jack",
+  "serverName": "IISM-CCU-Api",
   "serverVersion": "1.0.0-alpha.2",
   "title": "Vendor Information",
   "veapVersion": "1",
-  "vendorName": "info@ccu-historian.de",
+  "vendorName": "kontakt@iism.de",
   "~links": [
     {
       "rel": "item",

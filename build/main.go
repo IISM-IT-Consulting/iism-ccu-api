@@ -13,7 +13,7 @@ const (
 	logLevel   = logging.InfoLevel
 	appName    = "iism-ccu-api"
 	appVersion = "2.0.62"
-	appPkg     = "github.com/mdzio/ccu-jack"
+	appPkg     = "github.com/IISM-IT-Consulting/iism-ccu-api"
 	ldFlags    = "-s -w -X main.appVersion=" + appVersion
 	buildDir   = ".."
 )
@@ -48,7 +48,7 @@ var (
 	files = []releng.CopySpec{
 		{Inc: "README.md"},
 		{Inc: "LICENSE.txt"},
-		{Inc: "dist/ccu-jack.cfg"},
+		{Inc: "dist/iism-ccu-api.cfg"},
 		{Inc: "build/tmp/VERSION"},
 		{Inc: "third-party-licenses/*", DstDir: "third-party-licenses"},
 		{Inc: "wd/webui/*", DstDir: "webui"},
@@ -60,14 +60,14 @@ var (
 		{Inc: "dist/ccu/update_script", Exe: true},
 		{Inc: "README.md", DstDir: "addon"},
 		{Inc: "LICENSE.txt", DstDir: "addon"},
-		{Inc: "dist/ccu/addon/ccu-jack-default.cfg", DstDir: "addon"},
+		{Inc: "dist/ccu/addon/iism-ccu-api-default.cfg", DstDir: "addon"},
 		{Inc: "build/tmp/VERSION", DstDir: "addon"},
 		{Inc: "dist/ccu/addon/update_hm_addons.tcl", DstDir: "addon", Exe: true},
 		{Inc: "third-party-licenses/*", DstDir: "addon/third-party-licenses"},
 		{Inc: "wd/webui/*", DstDir: "addon/webui"},
 		{Inc: "wd/webui/ext/*", DstDir: "addon/webui/ext"},
-		{Inc: "dist/ccu/rc.d/ccu-jack", DstDir: "rc.d", Exe: true},
-		{Inc: "dist/ccu/etc/monit-ccu-jack.cfg", DstDir: "etc"},
+		{Inc: "dist/ccu/rc.d/iism-ccu-api", DstDir: "rc.d", Exe: true},
+		{Inc: "dist/ccu/etc/monit-iism-ccu-api.cfg", DstDir: "etc"},
 		{Inc: "dist/ccu/www/config.cgi", DstDir: "www", Exe: true},
 		{Inc: "dist/ccu/www/update-check.cgi", DstDir: "www", Exe: true},
 	}

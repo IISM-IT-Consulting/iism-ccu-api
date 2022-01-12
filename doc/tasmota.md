@@ -4,9 +4,9 @@
 
 Folgende Schritte sind einmalig auszuführen:
 
-* Installation CCU-Jack als Add-On auf der CCU3 oder RaspberryMatic
+* Installation IISM-CCU-Api als Add-On auf der CCU3 oder RaspberryMatic
 * Freischaltung der Ports 2121 und 1883 in der CCU-Firewall
-* Akivierung von virtuellen Geräten in der Konfigurationsoberfläche des CCU-Jacks (Web-UI CCU → Einstellungen → Systemsteuerung → CCU-Jack → Konfiguration → CCU-Anbindung → Virtuelle Geräte aktivieren)
+* Akivierung von virtuellen Geräten in der Konfigurationsoberfläche des IISM-CCU-Apis (Web-UI CCU → Einstellungen → Systemsteuerung → IISM-CCU-Api → Konfiguration → CCU-Anbindung → Virtuelle Geräte aktivieren)
 
 Hilfreiche Werkzeuge:
 * [MQTT Explorer](https://mqtt-explorer.com/)
@@ -30,9 +30,9 @@ Der Topic-Baum der WLAN-Steckdose ist aus folgendem Bild ersichtlich:
 
 ![Topic-Baum](tasmota-topics.png)
 
-## Virtuelles Gerät im CCU-Jack anlegen
+## Virtuelles Gerät im IISM-CCU-Api anlegen
 
-In der Web-UI des CCU-Jacks unter _Virtuelle Geräte_ ein neues Gerät mit folgenden Kanälen erstellen und die Konfiguration speichern:
+In der Web-UI des IISM-CCU-Apis unter _Virtuelle Geräte_ ein neues Gerät mit folgenden Kanälen erstellen und die Konfiguration speichern:
 
 ![Virtuelle Kanäle](tasmota-channels.png)
 
@@ -71,9 +71,9 @@ Die restliche Konfiguration ist aus folgendem Bild ersichtlich:
 
 ![Topic-Baum](tasmota-parameters-2.png)
 
-_Hinweis: Wenn die Parameterwerte erneut betrachtet werden, so werden die " (doppelten Hochkommas) auf Grund eines Fehlers in Web-UI der CCU durch HTML-Sonderzeichen ersetzt (s.a. [Hinweis in der Beschreibung der virtuellen Geräte](virtual-devices.md#virtuelle-geräte-im-ccu-jack))._
+_Hinweis: Wenn die Parameterwerte erneut betrachtet werden, so werden die " (doppelten Hochkommas) auf Grund eines Fehlers in Web-UI der CCU durch HTML-Sonderzeichen ersetzt (s.a. [Hinweis in der Beschreibung der virtuellen Geräte](virtual-devices.md#virtuelle-geräte-im-iism-ccu-api))._
 
 ## Abschluss
 
-Damit ist die WLAN-Steckdose über die Web-UI bedienbar und kann wie ein HM-Gerät auch innerhalb von CCU-Programmen verwendet werden. Weitere Informationen zu den virtuellen Geräten sind in der CCU-Jack Dokumentation zu finden (Kapitel ["Virtuelle Geräte"](https://github.com/mdzio/ccu-jack#virtuelle-geräte) und Kapitel ["Virtuelle Geräte im CCU-Jack"](virtual-devices.md))
+Damit ist die WLAN-Steckdose über die Web-UI bedienbar und kann wie ein HM-Gerät auch innerhalb von CCU-Programmen verwendet werden. Weitere Informationen zu den virtuellen Geräten sind in der IISM-CCU-Api Dokumentation zu finden (Kapitel ["Virtuelle Geräte"](https://github.com/IISM-IT-Consulting/iism-ccu-api#virtuelle-geräte) und Kapitel ["Virtuelle Geräte im IISM-CCU-Api"](virtual-devices.md))
 

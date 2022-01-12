@@ -10,7 +10,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/mdzio/ccu-jack/mqtt"
+	"github.com/IISM-IT-Consulting/iism-ccu-api/mqtt"
 	"github.com/mdzio/go-hmccu/itf"
 	"github.com/mdzio/go-hmccu/itf/vdevices"
 	"github.com/mdzio/go-mqtt/message"

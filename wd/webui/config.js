@@ -205,7 +205,7 @@ function Config() {
                     }
                 }),
                 m("i.form-icon"), "BidCos-Wired Geräte (HMW-...) anbinden", m("br"),
-                "Achtung: Neustart vom CCU-Jack ist erforderlich! Falls virtuelle Geräte ebenfalls aktiviert sind, ist ein Neustart der CCU notwendig!"
+                "Achtung: Neustart vom IISM-CCU-Api ist erforderlich! Falls virtuelle Geräte ebenfalls aktiviert sind, ist ein Neustart der CCU notwendig!"
             ),
             m("label.form-switch",
                 m("input[type=checkbox]", {
@@ -221,7 +221,7 @@ function Config() {
                     }
                 }),
                 m("i.form-icon"), "CUxD Geräte anbinden", m("br"),
-                "Achtung: Neustart vom CCU-Jack ist erforderlich! Falls virtuelle Geräte ebenfalls aktiviert sind, ist ein Neustart der CCU notwendig!"
+                "Achtung: Neustart vom IISM-CCU-Api ist erforderlich! Falls virtuelle Geräte ebenfalls aktiviert sind, ist ein Neustart der CCU notwendig!"
             ),
             m("label.form-switch",
                 m("input[type=checkbox]", {
@@ -236,7 +236,7 @@ function Config() {
                     }
                 }),
                 m("i.form-icon"), "Virtuelle Geräte aktivieren", m("br"),
-                "Achtung: Virtuelle Geräte funktionieren nur dann, wenn der CCU-Jack als Add-On auf der CCU installiert wurde. ",
+                "Achtung: Virtuelle Geräte funktionieren nur dann, wenn der IISM-CCU-Api als Add-On auf der CCU installiert wurde. ",
                 "Ein Neustart der CCU ist erforderlich! Eine neue Geräteschnittstelle wird zur Projektierung der CCU hinzugefügt. ",
                 "Der Hersteller der CCU kann unter Umständen Support-Leistungen ablehnen. Dies betrifft generell jede zusätzlich ",
                 "installierte Software auf der CCU."

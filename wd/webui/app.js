@@ -1,4 +1,4 @@
-// Version component displays the version of the CCU-Jack.
+// Version component displays the version of the IISM-CCU-Api.
 function Version() {
     var version = "?"
     return {
@@ -32,7 +32,7 @@ function Layout() {
             return m(".container",
                 m(".columns",
                     m(".column.col-2.col-md-12",
-                        m("h1.text-center.text-primary", "CCU-Jack"),
+                        m("h1.text-center.text-primary", "IISM-CCU-Api"),
                         m("button.btn.btn-block.my-2", {
                             onclick: function () { m.route.set("/navigator:key...", { key: "/" }) }
                         }, "Navigator"),

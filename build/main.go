@@ -12,7 +12,7 @@ import (
 const (
 	logLevel   = logging.InfoLevel
 	appName    = "iism-ccu-api"
-	appVersion = "2.0.62"
+	appVersion = "2.0.63"
 	appPkg     = "github.com/IISM-IT-Consulting/iism-ccu-api"
 	ldFlags    = "-s -w -X main.appVersion=" + appVersion
 	buildDir   = ".."

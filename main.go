@@ -28,11 +28,11 @@ import (
 )
 
 const (
-	appDisplayName = "CCU-Jack"
-	appName        = "ccu-jack"
+	appDisplayName = "IISM CCU API"
+	appName        = "iism-ccu-api"
 	appDescription = "REST/MQTT-Interface for the HomeMatic CCU"
 	appCopyright   = "(C)2020-2021"
-	appVendor      = "info@ccu-historian.de"
+	appVendor      = "kontakt@iism.de"
 
 	// wait time for ReGaHss before signaling an error
 	reGaHssStartupTimeout = 2 * time.Minute

@@ -11,7 +11,7 @@ import (
 // build configuration
 const (
 	logLevel   = logging.InfoLevel
-	appName    = "ccu-jack"
+	appName    = "iism-ccu-api"
 	appVersion = "2.0.62"
 	appPkg     = "github.com/mdzio/ccu-jack"
 	ldFlags    = "-s -w -X main.appVersion=" + appVersion
